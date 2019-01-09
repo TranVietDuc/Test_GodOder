@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Things List</title>
+</head>
+<body>
+<a href="/createThing">Create new Thing</a>
+<h1>Things List</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <th:block th:each="thing : ${things}">
+        <tr>
+            <td th:text="${thing.name}"></td>
+            <td th:text="${thing.description}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
